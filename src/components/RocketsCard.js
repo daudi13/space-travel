@@ -1,17 +1,26 @@
-/* eslint-disable max-len */
+/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const RocketCard = () => (
+const RocketCard = ({
+  title, desc, jpg, reserved,
+}) => (
   <div className="rocket">
-    <image scr="https://i.imgur.com/DaCfMsj.jpg" alt="rocker" />
+    <image scr={jpg} alt="rocker" />
     <div className="rocket--desc">
-      <h2 className="rocket--desc__title">Falcon 1</h2>
+      <h2 className="rocket--desc__title">{title}</h2>
       <p className="rocket--desc__info">
-        j
+        {desc}
       </p>
-      <button type="button">Reserve Rocket</button>
+      <button type="button">{reserved ? 'reserved Rocket' : 'Cancel Reservation'}</button>
     </div>
   </div>
 );
+
+RocketCard.prototypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  reserved: PropTypes.string.isRequired,
+};
 
 export default RocketCard;

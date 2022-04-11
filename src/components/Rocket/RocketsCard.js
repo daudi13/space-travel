@@ -6,7 +6,7 @@ const RocketCard = ({
   title, desc, jpg, reserved,
 }) => (
   <div className="rocket">
-    <img src={jpg} alt={title} />
+    <img className="rocket--image" src={jpg} alt={title} />
     <div className="rocket--desc">
       <h2 className="rocket--desc__title">{title}</h2>
       <p className="rocket--desc__info">

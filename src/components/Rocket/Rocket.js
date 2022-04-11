@@ -35,7 +35,7 @@ const Rocket = () => {
   ];
 
   return (
-    <div className="Rocket-container">
+    <div className="rocket-container">
       {
         rocketData.map((rocket) => (
           <RocketCard

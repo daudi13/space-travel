@@ -1,5 +1,6 @@
 import React from 'react';
 import RocketCard from './RocketsCard';
+import './Rocket.css';
 
 const Rocket = () => {
   const rocketData = [
@@ -15,7 +16,7 @@ const Rocket = () => {
       title: 'Falcon 9',
       desc: 'Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.',
       jpg: 'https://farm1.staticflickr.com/623/23660653516_5b6cb301d1_b.jpg',
-      reserved: false,
+      reserved: true,
     },
     {
       id: 3,

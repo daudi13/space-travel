@@ -1,0 +1,23 @@
+.mission-table {
+  margin: 0 auto;
+  width: 90vw;
+  margin-bottom: 50px;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+tr:nth-child(2n) {
+  background-color: rgba(62, 62, 62, 0.07);
+}
+.status-section,
+.mission-section,
+.join-section {
+  width: 150px;
+  text-align: center;
+}

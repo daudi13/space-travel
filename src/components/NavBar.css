@@ -7,7 +7,7 @@
 
 .nav-bar {
   display: flex;
-  padding: 10px;
+  margin: 10px 50px;
   justify-content: space-between;
   align-items: center;
 }
@@ -25,4 +25,11 @@
 
 .header-title {
   font-size: 24px;
+}
+
+hr {
+  width: 90vw;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  color: rgba(62, 62, 62, 0.4);
 }

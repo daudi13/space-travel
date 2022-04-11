@@ -32,7 +32,12 @@ img {
   text-align: justify;
 }
 
-
+.reserved-badge {
+  padding: 2px 4px;
+  background-color: rgb(13, 141, 120);
+  margin-right: 5px;
+  color: #fff;
+}
 
 .rocket--desc__btn {
   background-color: rgb(0, 153, 255);

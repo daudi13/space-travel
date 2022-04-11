@@ -10,9 +10,10 @@ const RocketCard = ({
     <div className="rocket--desc">
       <h2 className="rocket--desc__title">{title}</h2>
       <p className="rocket--desc__info">
+        {reserved && <span className="reserved-badge">reserved</span>}
         {desc}
       </p>
-      <button type="button">{reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
+      <button type="button" className="rocket--desc__btn">{reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
     </div>
   </div>
 );

@@ -5,9 +5,15 @@ import { Link } from 'react-router-dom';
 const NavLink = () => (
   <div>
     <nav className="nav-links">
-      <Link to="/">Rockets</Link>
-      <Link to="/missions">Missions</Link>
-      <Link to="/profile">My Profile</Link>
+      <Link className="nav-link" to="/">
+        Rockets
+      </Link>
+      <Link className="nav-link" to="/missions">
+        Missions
+      </Link>
+      <Link className="nav-link" to="/profile">
+        My Profile
+      </Link>
     </nav>
   </div>
 );

@@ -4,7 +4,6 @@ const GET_ROCKETS_REQUEST = 'space-travel/Rockets/GET_REQUEST';
 const GET_ROCKETS_SUCCESS = 'space-travel/Rockets/GET_SUCESS';
 const GET_ROCKETS_FAIL = 'space-travel/Rockets/GET_FAIL';
 const RESERVE_ROCKET = 'space-travel/Rockets/RESERVE_ROCKET';
-const UNRESERVE_ROCKET = 'space-travel/Rockets/UNRESERVE_ROCKET';
 
 const initialState = {
   load: false,
@@ -59,10 +58,6 @@ const reserveRocket = (id) => ({
   payload: id,
 });
 
-const unreserveRocket = (id) => ({
-  type: UNRESERVE_ROCKET,
-  payload: id,
-});
 
 export default function rocketReducer(state = initialState, action) {
   switch (action.type) {
@@ -91,17 +86,6 @@ export default function rocketReducer(state = initialState, action) {
         }),
         error: '',
       };
-    case UNRESERVE_ROCKET:
-      return {
-        ...state,
-        rocketsData: state.rocketsData.map((rocket) => {
-          if (String(rocket.id) !== String(action.payload)) {
-            return rocket;
-          }
-          return { ...rocket, reserved: false };
-        }),
-        error: '',
-      };
     default:
       return state;
   }
@@ -112,5 +96,4 @@ export {
   getRocketSuccess,
   getRocketRequest,
   reserveRocket,
-  unreserveRocket,
 };

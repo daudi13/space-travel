@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const RocketCard = ({ rocket }) => (
   <div className="rocket">
-    <img className="rocket--image" src={rocket.jpg} alt={rocket.title} />
+    <img className="rocket--image" src={rocket.image} alt={rocket.title} />
     <div className="rocket--desc">
       <h2 className="rocket--desc__title">{rocket.title}</h2>
       <p className="rocket--desc__info">
@@ -18,7 +18,7 @@ const RocketCard = ({ rocket }) => (
 RocketCard.propTypes = {
   rocket: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    jpg: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     reserved: PropTypes.bool.isRequired,
   }).isRequired,

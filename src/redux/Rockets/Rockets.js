@@ -36,7 +36,7 @@ export function getRockets() {
             id,
             rocket_name: name,
             description: desc,
-            flickr_image: image,
+            flickr_images: image,
           } = uniData;
           return {
             id,

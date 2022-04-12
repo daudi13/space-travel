@@ -6,8 +6,8 @@ import { reserveRocket } from '../../redux/Rockets/Rockets';
 const RocketCard = ({ rocket }) => {
   const dispatch = useDispatch();
 
-  const handleReservation = () => (
-    dispatch(reserveRocket(rocket.id))
+  const handleReservation = (event) => (
+    dispatch(reserveRocket(event.target.id))
   );
 
   return (

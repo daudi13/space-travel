@@ -1,30 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { dispatchFetchMissions } from '../../redux/Missions/missions';
 import Mission from './Mission';
 import './Missions.css';
 
 const Missions = () => {
-  const missions = [
-    {
-      mission_name: 'Appolo',
-      mission_id: 1,
-      description: 'description here',
-    },
-    {
-      mission_name: 'Appolo',
-      mission_id: 1,
-      description: 'description here',
-    },
-    {
-      mission_name: 'Appolo',
-      mission_id: 1,
-      description: 'description here',
-    },
-    {
-      mission_name: 'Appolo',
-      mission_id: 1,
-      description: 'description here',
-    },
-  ];
+  const missions = useSelector((state) => state.missions);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dispatchFetchMissions());
+  }, []);
 
   return (
     <div>

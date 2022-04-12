@@ -1,9 +1,9 @@
-import { combineReducer, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import rocketReducer from './Rockets/Rockets';
 
-const root = combineReducer(
+const root = combineReducers(
   {
     rockets: rocketReducer,
   },

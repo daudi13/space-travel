@@ -6,8 +6,8 @@ import { reserveRocket } from '../../redux/Rockets/Rockets';
 const RocketCard = ({ rocket }) => {
   const dispatch = useDispatch();
 
-  const handleReservation = (event) => (
-    dispatch(reserveRocket(event.target.id))
+  const handleReservation = (id) => (
+    dispatch(reserveRocket(id))
   );
 
   return (
@@ -19,7 +19,7 @@ const RocketCard = ({ rocket }) => {
           {rocket.reserved && <small className="reserved-badge">reserved</small>}
           {rocket.desc}
         </p>
-        <button type="button" className="rocket--desc__btn" onClick={handleReservation}>{rocket.reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
+        <button type="button" className="rocket--desc__btn" onClick={() => handleReservation(rocket.id)}>{rocket.reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
       </div>
     </div>
   );

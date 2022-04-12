@@ -1,48 +1,31 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { dispatchFetchMissions } from '../../redux/Missions/missions';
+import React from 'react';
 import Mission from './Mission';
-import generateId from './generateId';
 import './Missions.css';
 
 const Missions = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(dispatchFetchMissions);
-  }, []);
-  const test = [
+  const missions = [
     {
-      name: 'Apolo',
-      description: 'The first rocket to go out of the earth',
-      member: false,
-      joined: true,
+      mission_name: 'Appolo',
+      mission_id: 1,
+      description: 'description here',
     },
     {
-      name: 'Apolo',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quae delectus esse, rerum porro alias sapiente reiciendis doloremque sit tempora sint officiis maiores aliquam ab laudantium! Deleniti, sint! Culpa, in.',
-      member: false,
-      joined: true,
+      mission_name: 'Appolo',
+      mission_id: 1,
+      description: 'description here',
     },
     {
-      name: 'Apolo',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quae delectus esse, rerum porro alias sapienteCulpa, in.',
-      member: false,
-      joined: true,
+      mission_name: 'Appolo',
+      mission_id: 1,
+      description: 'description here',
     },
     {
-      name: 'Apolo',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. amet consectetur adipisicing elit. Facere, quae delectus esse, rerum porro alias sapiente reiciendis doloremque sit tempora sint officiis maiores aliquam ab laudantium! Deleniti, sint! Culpa, in.',
-      member: true,
-      joined: true,
-    },
-    {
-      name: 'Apolo',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, quae delectus esse, rerum porro alias sapiente reiciete reiciendis doloremque sit tempora sint officiis maiores aliquam ab laudantium! Deleniti, sint! Culpa, in.',
-      member: false,
-      joined: true,
+      mission_name: 'Appolo',
+      mission_id: 1,
+      description: 'description here',
     },
   ];
+
   return (
     <div>
       <table className="mission-table">
@@ -55,8 +38,8 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {test.map((item) => (
-            <Mission mission={item} key={generateId()} />
+          {missions.map((mission) => (
+            <Mission mission={mission} key={mission.mission_id} />
           ))}
         </tbody>
       </table>

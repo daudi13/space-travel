@@ -1,5 +1,3 @@
-import fetchMissionsData from '../APIs/missionAPI';
-
 const FETCH_MISSIONS = 'spaceTravel/missions/FETCH_MISSIONS';
 
 export const fetchMissions = (missions) => ({
@@ -9,16 +7,24 @@ export const fetchMissions = (missions) => ({
   },
 });
 
-export const dispatchFetchMissions = () => (dispatch) => {
-  fetchMissionsData().then((missionsData) => {
-    const missions = missionsData.map((mission) => ({
-      mission_id: mission.mission_id,
-      mission_name: mission.mission_name,
-      description: mission.description,
-    }));
-    // console.log(missions);
-    dispatch(fetchMissions(missions));
-  });
+export const dispatchFetchMissions = () => async (dispatch) => {
+  const ApiUrl = 'https://api.spacexdata.com/v3/missions';
+  fetch(ApiUrl)
+    .then((res) => {
+      const missionData = res.json();
+      return missionData;
+    })
+    .then((data) => {
+      const result = data.map((mission) => ({
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+      }));
+      dispatch(fetchMissions(result));
+    })
+    .catch((e) => {
+      throw new Error(e);
+    });
 };
 
 const reducer = (state = [], action = {}) => {

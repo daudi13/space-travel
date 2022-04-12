@@ -58,7 +58,6 @@ const reserveRocket = (id) => ({
   payload: id,
 });
 
-
 export default function rocketReducer(state = initialState, action) {
   switch (action.type) {
     case GET_ROCKETS_REQUEST:
@@ -84,7 +83,6 @@ export default function rocketReducer(state = initialState, action) {
           }
           return rocket;
         }),
-        error: '',
       };
     default:
       return state;

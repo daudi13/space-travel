@@ -12,9 +12,9 @@ const RocketCard = ({ rocket }) => {
 
   return (
     <div className="rocket">
-      <img className="rocket--image" src={rocket.image} alt={rocket.title} />
+      <img className="rocket--image" src={rocket.image} alt={rocket.name} />
       <div className="rocket--desc">
-        <h2 className="rocket--desc__title">{rocket.title}</h2>
+        <h2 className="rocket--desc__title">{rocket.name}</h2>
         <p className="rocket--desc__info">
           {rocket.reserved && <small className="reserved-badge">reserved</small>}
           {rocket.desc}
@@ -28,7 +28,7 @@ const RocketCard = ({ rocket }) => {
 RocketCard.propTypes = {
   rocket: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     desc: PropTypes.string.isRequired,
     reserved: PropTypes.bool.isRequired,

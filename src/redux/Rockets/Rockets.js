@@ -84,10 +84,10 @@ export default function rocketReducer(state = initialState, action) {
       return {
         ...state,
         rocketsData: state.rocketsData.map((rocket) => {
-          if (String(rocket.id) !== String(action.payload)) {
-            return rocket;
+          if (rocket.id === action.payload) {
+            return { ...rocket, reserved: !rocket.reserved };
           }
-          return { ...rocket, reserved: true };
+          return rocket;
         }),
         error: '',
       };

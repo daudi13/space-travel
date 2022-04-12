@@ -74,6 +74,18 @@ export default function rocketReducer(state = initialState, action) {
         load: false,
         error: action.payload,
       };
+    case RESERVE_ROCKET:
+      return {
+        load: false,
+        rocketsData: state.rocketsData.map((rocket) => ({
+          id: rocket.id,
+          name: rocket.name,
+          desc: rocket.desc,
+          image: rocket.image,
+          reserved: rocket.id === action.id ? !rocket.reserved : rocket.reserved,
+        })),
+        error: '',
+      };
     default:
       return state;
   }
@@ -84,5 +96,4 @@ export {
   getRocketSuccess,
   getRocketRequest,
   reserveRocket,
-  unreserveRocket,
 };

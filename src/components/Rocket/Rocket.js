@@ -40,10 +40,7 @@ const Rocket = () => {
         rocketData.map((rocket) => (
           <RocketCard
             key={rocket.id}
-            title={rocket.title}
-            desc={rocket.desc}
-            jpg={rocket.jpg}
-            reserved={rocket.reserved}
+            rocket={rocket}
           />
         ))
       }

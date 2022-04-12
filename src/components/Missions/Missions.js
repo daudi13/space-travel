@@ -1,8 +1,16 @@
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { dispatchFetchMissions } from '../../redux/Missions/missions';
 import Mission from './Mission';
 import generateId from './generateId';
 import './Missions.css';
 
 const Missions = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dispatchFetchMissions);
+  }, []);
   const test = [
     {
       name: 'Apolo',

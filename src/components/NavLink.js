@@ -1,21 +1,21 @@
 import React from 'react';
 import './NavLink.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const NavLink = () => (
+const NavLinks = () => (
   <div>
     <nav className="nav-links">
-      <Link className="nav-link" to="/">
+      <NavLink className="nav-link" to="/">
         Rockets
-      </Link>
-      <Link className="nav-link" to="/missions">
+      </NavLink>
+      <NavLink className="nav-link" to="/missions">
         Missions
-      </Link>
-      <Link className="nav-link" to="/profile">
+      </NavLink>
+      <NavLink className="nav-link" to="/profile">
         My Profile
-      </Link>
+      </NavLink>
     </nav>
   </div>
 );
 
-export default NavLink;
+export default NavLinks;

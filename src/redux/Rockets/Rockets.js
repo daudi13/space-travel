@@ -30,21 +30,13 @@ export function getRockets() {
     dispatch(getRocketRequest());
     FetchRocketsData()
       .then((data) => {
-        const rocketinfo = data.map((uniData) => {
-          const {
-            id,
-            rocket_name: name,
-            description: desc,
-            flickr_images: image,
-          } = uniData;
-          return {
-            id,
-            name,
-            desc,
-            image,
-            reserved: false,
-          };
-        });
+        const rocketinfo = data.map((uniData) => ({
+          id: uniData.rocket_id,
+          name: uniData.rocket_name,
+          desc: uniData.description,
+          image: uniData.flickr_images[0],
+          reserved: false,
+        }));
         dispatch(getRocketSuccess(rocketinfo));
       })
       .catch((error) => {

@@ -1,4 +1,5 @@
 const FETCH_MISSIONS = 'spaceTravel/missions/FETCH_MISSIONS';
+const JOIN_MISSION = 'spaceTravel/missions/JOIN_MISSION';
 
 export const fetchMissions = (missions) => ({
   type: FETCH_MISSIONS,
@@ -19,6 +20,7 @@ export const dispatchFetchMissions = () => async (dispatch) => {
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
+        reserved: false,
       }));
       dispatch(fetchMissions(result));
     })
@@ -27,10 +29,24 @@ export const dispatchFetchMissions = () => async (dispatch) => {
     });
 };
 
+export const joinMission = (id) => ({
+  type: JOIN_MISSION,
+  payload: {
+    id,
+  },
+});
+
 const reducer = (state = [], action = {}) => {
   switch (action.type) {
     case FETCH_MISSIONS:
       return action.payload.missions;
+    case JOIN_MISSION:
+      return state.map((mission) => {
+        if (mission.mission_id !== action.payload.id) {
+          return mission;
+        }
+        return { ...mission, reserved: true };
+      });
     default:
       return state;
   }

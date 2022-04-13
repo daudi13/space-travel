@@ -9,7 +9,9 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(dispatchFetchMissions());
+    if (missions.length === 0) {
+      dispatch(dispatchFetchMissions());
+    }
   }, []);
 
   return (

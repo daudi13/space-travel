@@ -9,7 +9,9 @@ const Rocket = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRockets());
+    if (rockets.rocketsData.length === 0) {
+      dispatch(getRockets());
+    }
   }, []);
 
   const newRockets = rockets.rocketsData;

@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Rocket />} />
           <Route path="/missions" element={<Missions />} />
-          <Route path="/missions" element={<MyProfile />} />
+          <Route path="/my-profile" element={<MyProfile />} />
         </Routes>
       </Provider>
     </BrowserRouter>

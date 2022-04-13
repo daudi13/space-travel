@@ -20,6 +20,7 @@ export const dispatchFetchMissions = () => async (dispatch) => {
         mission_id: mission.mission_id,
         mission_name: mission.mission_name,
         description: mission.description,
+        reserved: false,
       }));
       dispatch(fetchMissions(result));
     })

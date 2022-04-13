@@ -21,6 +21,23 @@
 
 .join-mission-btn {
   background-color: transparent;
+  border: none;
+  outline: none;
+  /* padding: 5px; */
+  /* font-size: 14px; */
+  /* cursor: pointer; */
+}
+
+.join-btn {
+  color: #3e3e3e;
+  border: 1px solid #3e3e3e;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.leave-btn {
   color: #f00;
   border: 1px solid #f00;
   border-radius: 3px;

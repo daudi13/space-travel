@@ -7,24 +7,47 @@
   text-align: center;
 }
 
-.status-content {
-  background-color: rgba(78, 169, 255, 0.4);
-  padding: 2px;
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 700;
-}
-
 .join-mission {
   text-align: center;
 }
 
 .join-mission-btn {
   background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.join-btn {
+  color: #3e3e3e;
+  border: 1px solid #3e3e3e;
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.leave-btn {
   color: #f00;
   border: 1px solid #f00;
   border-radius: 3px;
   padding: 5px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.active-member,
+.not-member {
+  color: #fff;
+  padding: 4px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.active-member {
+  background-color: rgba(78, 169, 255, 1);
+}
+
+.not-member {
+  background-color: #3e3e3e;
 }

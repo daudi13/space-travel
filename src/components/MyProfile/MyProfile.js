@@ -15,15 +15,19 @@ const MyProfile = () => {
     return <h2>No Reserved Rockets</h2>;
   };
 
+  const missions = useSelector((state) => state.missions);
+  const activeMissions = missions.filter((mission) => mission.reserved);
+
   return (
     <div className="my-profile">
       <section className="my-missions-sec">
         <h2 className="my-headings">My Missions</h2>
         <div className="my-missions">
-          <p className="my-mission">Telstar</p>
-          <p className="my-mission">SES</p>
-          <p className="my-mission">AsiaSat</p>
-          <p className="my-mission">SO50</p>
+          {activeMissions.map((mission) => (
+            <p className="my-mission" key={mission.mission_id}>
+              {mission.mission_name}
+            </p>
+          ))}
         </div>
       </section>
       <section className="my-rockets-sec">

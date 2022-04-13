@@ -29,9 +29,8 @@ const MyProfile = () => {
       <section className="my-rockets-sec">
         <h2 className="my-headings">My Missions</h2>
         <div className="my-rockets">
-          {/* <p className="my-rocket">Falcon9</p>
-          <p className="my-rocket">Falcon</p>
-          <p className="my-rocket">Starship</p> */
+          {
+            handleReservations()
           }
         </div>
       </section>

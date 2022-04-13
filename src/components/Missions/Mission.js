@@ -15,7 +15,7 @@ const Mission = ({ mission }) => {
         <p className="desc-content">{mission.description}</p>
       </td>
       <td className="status-mission">
-        <p className="status-content">NOT A MEMBER</p>
+        <p className="status-content">{(mission.reserved && <span className="active-member">Active Memeber</span>) || (!mission.reserved && <span className="not-member">NOT A MEMBER</span>)}</p>
       </td>
       <td className="join-mission">
         <button type="button" className="join-mission-btn" onClick={() => (mission.reserved ? dispatch(leaveMission(mission.mission_id)) : dispatch(joinMission(mission.mission_id)))}>

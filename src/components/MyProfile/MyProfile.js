@@ -3,8 +3,21 @@ import { useSelector } from 'react-redux';
 import './MyProfile.css';
 
 const MyProfile = () => {
+  const myRockets = useSelector((state) => state.rockets);
+  const myReserveRockets = myRockets.rocketsData.filter((rocket) => rocket.reserved);
+
+  const handleReservations = () => {
+    if (myReserveRockets.length) {
+      return myReserveRockets.map((rocket) => (
+        <p key={rocket.id} className="my-rocket">{rocket.name}</p>
+      ));
+    }
+    return <h2>No Reserved Rockets</h2>;
+  };
+
   const missions = useSelector((state) => state.missions);
   const activeMissions = missions.filter((mission) => mission.reserved);
+
   return (
     <div className="my-profile">
       <section className="my-missions-sec">
@@ -20,9 +33,9 @@ const MyProfile = () => {
       <section className="my-rockets-sec">
         <h2 className="my-headings">My Missions</h2>
         <div className="my-rockets">
-          <p className="my-rocket">Falcon9</p>
-          <p className="my-rocket">Falcon</p>
-          <p className="my-rocket">Starship</p>
+          {
+            handleReservations()
+          }
         </div>
       </section>
     </div>

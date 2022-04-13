@@ -19,7 +19,11 @@ const Rocket = () => {
   const cards = newRockets.length > 0 && newRockets.map((rocket) => (
     <RocketCard
       key={rocket.id}
-      rocket={rocket}
+      id={rocket.id}
+      name={rocket.name}
+      image={rocket.image}
+      desc={rocket.desc}
+      reserved={rocket.reserved}
     />
   ));
   return (

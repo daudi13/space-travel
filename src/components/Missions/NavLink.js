@@ -11,7 +11,7 @@ const NavLinks = () => (
       <NavLink className="nav-link" to="/missions">
         Missions
       </NavLink>
-      <NavLink className="nav-link" to="/profile">
+      <NavLink className="nav-link" to="/my-profile">
         My Profile
       </NavLink>
     </nav>

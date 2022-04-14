@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDragons } from '../../redux/dragons/dragons';
+import DragonCard from './DragonCard';
 
 const Dragon = () => {
   const dragons = useSelector((state) => state.dragons);
@@ -14,10 +15,20 @@ const Dragon = () => {
 
   const newDragons = dragons.dragonData;
 
-  const dragonCard =  newDragons.length > 0 && newDragons.map(())
+  const cards = newDragons.length > 0 && newDragons.map((card) => (
+    <DragonCard
+      key={card.id}
+      image={card.image}
+      name={card.name}
+      desc={card.desc}
+      reserved={card.reserved}
+    />
+  ));
 
   return (
-    <div className="rocket-container" />
+    <div className="rocket-container">
+      {cards}
+    </div>
   );
 };
 

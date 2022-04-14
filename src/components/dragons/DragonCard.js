@@ -1,8 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveDragons } from '../../redux/dragons/dragons';
 
-const DragonCard = () => {
+const DragonCard = ({
+  id, image, desc, reserved, name,
+}) => {
   const dispatch = useDispatch();
 
   const handleReservation = (id) => {
@@ -21,6 +24,14 @@ const DragonCard = () => {
       </div>
     </div>
   );
+};
+
+DragonCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  reserved: PropTypes.string.isRequired,
 };
 
 export default DragonCard;

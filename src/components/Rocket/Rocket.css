@@ -1,6 +1,7 @@
 .rocket-container {
   overflow-x: hidden;
   padding: 20px 40px;
+  min-height: 100vh;
 }
 
 h2,

@@ -8,7 +8,7 @@ const NavBar = () => (
     <div className="nav-bar">
       <header className="logo-title">
         <img className="logo" src={logo} alt="logo" />
-        <h1 className="header-title">Space Travels&apos; Hub</h1>
+        <h1 className="header-title">Space-Travellers&apos; Hub</h1>
       </header>
       <NavLinks />
     </div>

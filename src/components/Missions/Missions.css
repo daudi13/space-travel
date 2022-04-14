@@ -1,6 +1,12 @@
+.table {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
 .mission-table {
+  min-width: 1000px;
   margin: 0 auto;
-  width: 90vw;
   margin-bottom: 50px;
 }
 

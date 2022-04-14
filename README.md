@@ -2,7 +2,7 @@
 
 <!-- > In this task, you will be working with the real live data from the SpaceX API. Your task is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions. -->
 
-> This is a dummy website for company that provides commercial and scientific space travel sercises. This application will allow users to book rockets and join selected space missions. You can checkout the demo [here](https://space-traveller.herokuapp.com/my-profile)
+> This is a dummy website for company that provides commercial and scientific space travel services. This application will allow users to book rockets and join selected space missions. You can checkout the demo [here](https://space-traveller.herokuapp.com/my-profile)
 
 ![](./space-traveller.gif)
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import './Footer.css';
 
 const Footer = () => (
-  <footer>
+  <footer className="footer">
     <p>
       Copyright&copy;
       {new Date().getFullYear()}

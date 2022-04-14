@@ -1,0 +1,26 @@
+.my-profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-missions-sec,
+.my-rockets-sec {
+  margin: 60px;
+  width: 100%;
+}
+
+.my-headings {
+  margin-bottom: 20px;
+}
+
+.my-missions,
+.my-rockets {
+  border: 1px solid rgba(62, 62, 62, 0.1);
+  border-radius: 5px;
+}
+
+.my-mission,
+.my-rocket {
+  border: 1px solid rgba(62, 62, 62, 0.1);
+  padding: 20px;
+}

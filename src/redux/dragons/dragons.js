@@ -80,3 +80,11 @@ export default function dragonReducer(state = initialState, action) {
       return state;
   }
 }
+
+export {
+  getDragonsRequest,
+  getDragonFail,
+  getDragons,
+  getDragonsSuccess,
+  reserveDragons,
+};

@@ -1,8 +1,7 @@
 .my-profile {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 44vh;
+  margin-bottom: 60vh;
 }
 
 .my-missions-sec,
@@ -25,4 +24,11 @@
 .my-rocket {
   border: 1px solid rgba(62, 62, 62, 0.1);
   padding: 20px;
+}
+
+@media screen and  (max-width: 768px) {
+  .my-profile {
+    flex-wrap: wrap;
+    margin-bottom: 44vh;
+  }
 }

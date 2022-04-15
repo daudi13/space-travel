@@ -21,7 +21,7 @@ const RocketCard = ({
           {reserved && <small className="reserved-badge">reserved</small>}
           {desc}
         </p>
-        <button type="button" className={reserved || 'rocket--desc__btn'} onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'reserved Rocket' }</button>
+        <button type="button" className={reserved || 'rocket--desc__btn'} onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'reserve Rocket' }</button>
       </div>
     </div>
   );

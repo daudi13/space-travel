@@ -6,10 +6,13 @@
   margin: 1px 10px;
   text-decoration: none;
   color: rgb(78, 169, 255);
+  font-family: 'Chakra Petch', sans-serif;
+  line-height: 2;
 }
 
 .active {
   /* border-right: solid 1px rgba(0, 0, 0, 0.8); */
+  color: rgb(221, 107, 41);
   text-decoration: underline;
 }
 

@@ -6,6 +6,7 @@
 
 h2,
 p {
+  font-family: 'Chakra Petch', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -43,6 +44,7 @@ img {
 
 button {
   padding: 8px 10px;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .rocket--desc__btn {
@@ -81,9 +83,6 @@ button {
   }
 }
 
-false {
-  background-color: yellow;
-}
 
 .nada {
   color: grey;

@@ -31,7 +31,7 @@ DragonCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   desc: PropTypes.string.isRequired,
-  reserved: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default DragonCard;

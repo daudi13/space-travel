@@ -7,7 +7,7 @@ export default async function FetchDragons() {
       'Can not fetch rocket data with te provided endpoint',
     );
   } try {
-    const dragonData = response.json();
+    const dragonData = await response.json();
     return dragonData;
   } catch (error) {
     throw new Error('Can not retireve data from the response');

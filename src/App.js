@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Rocket />} />
           <Route path="/missions" element={<Missions />} />
           <Route path="/my-profile" element={<MyProfile />} />
-          <Route path="/dragons" element={<Dragon />} />
+          <Route path="/dragon" element={<Dragon />} />
         </Routes>
       </Provider>
       <Footer />

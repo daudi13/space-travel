@@ -25,23 +25,25 @@ const getDragonFail = (error) => ({
   payload: error,
 });
 
-const getDragons = () => (dispatch) => {
-  dispatch(getDragonsRequest());
-  FetchDragons()
-    .then((data) => {
-      const dragonData = data.map((uniData) => ({
-        id: uniData.id,
-        name: uniData.name,
-        desc: uniData.description,
-        image: uniData.flickr_image[0],
-        reserved: false,
-      }));
-      dispatch(getDragonsSuccess(dragonData));
-    })
-    .catch((error) => {
-      dispatch(getDragonFail(error.message));
-    });
-};
+function getDragons() {
+  return (dispatch) => {
+    dispatch(getDragonsRequest());
+    FetchDragons()
+      .then((data) => {
+        const dragonData = data.map((uniData) => ({
+          id: uniData.id,
+          name: uniData.name,
+          desc: uniData.description,
+          image: uniData.flickr_images[0],
+          reserved: false,
+        }));
+        dispatch(getDragonsSuccess(dragonData));
+      })
+      .catch((error) => {
+        dispatch(getDragonFail(error.message));
+      });
+  };
+}
 
 const reserveDragons = (id) => ({
   type: RESERVE_DRAGONS,

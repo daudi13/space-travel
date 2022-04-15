@@ -8,6 +8,9 @@ const NavLinks = () => (
       <NavLink className="nav-link" to="/">
         Rockets
       </NavLink>
+      <NavLink className="nav-link" to="/dragon">
+        Dragons
+      </NavLink>
       <NavLink className="nav-link" to="/missions">
         Missions
       </NavLink>

@@ -18,6 +18,7 @@ const Dragon = () => {
   const cards = newDragons.length > 0 && newDragons.map((card) => (
     <DragonCard
       key={card.id}
+      id={card.id}
       image={card.image}
       name={card.name}
       desc={card.desc}

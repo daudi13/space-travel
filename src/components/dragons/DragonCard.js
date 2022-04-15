@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket } from '../../redux/Rockets/Rockets';
+import { reserveDragons } from '../../redux/dragons/dragons';
 
-const RocketCard = ({
-  id, image, name, reserved, desc,
+const DragonCard = ({
+  id, image, desc, reserved, name,
 }) => {
   const dispatch = useDispatch();
 
-  const handleReservation = (id) => (
-    dispatch(reserveRocket(id))
-  );
-
+  const handleReservation = (id) => {
+    dispatch(reserveDragons(id));
+  };
   return (
     <div className="rocket">
       <img className="rocket--image" src={image} alt={name} />
@@ -21,13 +20,13 @@ const RocketCard = ({
           {reserved && <small className="reserved-badge">reserved</small>}
           {desc}
         </p>
-        <button type="button" className={reserved || 'rocket--desc__btn'} onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'reserve Rocket' }</button>
+        <button type="button" className={reserved || 'rocket--desc__btn'} onClick={() => handleReservation(id)}>{reserved ? 'Cancel Reservation' : 'reserve Dragon' }</button>
       </div>
     </div>
   );
 };
 
-RocketCard.propTypes = {
+DragonCard.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
@@ -35,4 +34,4 @@ RocketCard.propTypes = {
   reserved: PropTypes.bool.isRequired,
 };
 
-export default RocketCard;
+export default DragonCard;

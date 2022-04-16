@@ -22,6 +22,7 @@ const Dragon = () => {
       image={card.image}
       name={card.name}
       desc={card.desc}
+      info={card.wikipedia}
       reserved={card.reserved}
     />
   ));

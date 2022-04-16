@@ -20,7 +20,9 @@ const MyProfile = () => {
   const handleDragonReservation = () => {
     if (myReservedDragons.length) {
       return myReservedDragons.map((dragon) => (
-        <p key={dragon.id} className="my-rocket">{dragon.name}</p>
+        <p key={dragon.id} className="my-rocket">
+          <a href={dragon.wikipedia}>{dragon.name}</a>
+        </p>
       ));
     }
     return <h3 className="nada">No Reserved Dragons</h3>;
@@ -34,28 +36,24 @@ const MyProfile = () => {
       <section className="my-missions-sec">
         <h2 className="my-headings">My Missions</h2>
         <div className="my-missions">
-          {missions.length ? activeMissions.map((mission) => (
-            <p className="my-mission" key={mission.mission_id}>
-              {mission.mission_name}
-            </p>
-          )) : <h3 className="nada">No Booked Missions</h3>}
+          {missions.length ? (
+            activeMissions.map((mission) => (
+              <p className="my-mission" key={mission.mission_id}>
+                <a href={mission.wikipedia}>{mission.mission_name}</a>
+              </p>
+            ))
+          ) : (
+            <h3 className="nada">No Booked Missions</h3>
+          )}
         </div>
       </section>
       <section className="my-rockets-sec">
         <h2 className="my-headings">My Rockets</h2>
-        <div className="my-rockets">
-          {
-            handleReservations()
-          }
-        </div>
+        <div className="my-rockets">{handleReservations()}</div>
       </section>
       <section className="my-rockets-sec">
         <h2 className="my-headings">My Dragons</h2>
-        <div className="my-rockets">
-          {
-            handleDragonReservation()
-          }
-        </div>
+        <div className="my-rockets">{handleDragonReservation()}</div>
       </section>
     </div>
   );

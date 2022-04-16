@@ -23,6 +23,7 @@ const Rocket = () => {
       name={rocket.name}
       image={rocket.image}
       desc={rocket.desc}
+      info={rocket.wikipedia}
       reserved={rocket.reserved}
     />
   ));

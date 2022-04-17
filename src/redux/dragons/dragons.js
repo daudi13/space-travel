@@ -35,6 +35,7 @@ function getDragons() {
           name: uniData.name,
           desc: uniData.description,
           image: uniData.flickr_images[0],
+          wikipedia: uniData.wikipedia,
           reserved: false,
         }));
         dispatch(getDragonsSuccess(dragonData));

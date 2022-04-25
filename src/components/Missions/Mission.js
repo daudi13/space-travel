@@ -9,7 +9,9 @@ const Mission = ({ mission }) => {
   return (
     <tr>
       <td>
-        <p className="mission-name-content">{mission.mission_name}</p>
+        <p className="mission-name-content">
+          <a href={mission.wikipedia}>{mission.mission_name}</a>
+        </p>
       </td>
       <td>
         <p className="desc-content">{mission.description}</p>
@@ -19,8 +21,7 @@ const Mission = ({ mission }) => {
       </td>
       <td className="join-mission">
         <button type="button" className="join-mission-btn" onClick={() => (mission.reserved ? dispatch(leaveMission(mission.mission_id)) : dispatch(joinMission(mission.mission_id)))}>
-          {(mission.reserved && <span className="leave-btn">Leave mission</span>)
-          || (!mission.reserved && <span className="join-btn">Join Mission</span>)}
+          {(mission.reserved && <span className="leave-btn">Leave mission</span>) || (!mission.reserved && <span className="join-btn">Join Mission</span>)}
         </button>
       </td>
     </tr>
@@ -32,6 +33,7 @@ Mission.propTypes = {
     mission_name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     mission_id: PropTypes.string.isRequired,
+    wikipedia: PropTypes.string,
     reserved: PropTypes.bool,
   }).isRequired,
 };

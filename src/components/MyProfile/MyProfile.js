@@ -4,15 +4,30 @@ import './MyProfile.css';
 
 const MyProfile = () => {
   const myRockets = useSelector((state) => state.rockets);
+  const myDragons = useSelector((state) => state.dragons);
   const myReserveRockets = myRockets.rocketsData.filter((rocket) => rocket.reserved);
+  const myReservedDragons = myDragons.dragonData.filter((dragon) => dragon.reserved);
 
   const handleReservations = () => {
     if (myReserveRockets.length) {
       return myReserveRockets.map((rocket) => (
-        <p key={rocket.id} className="my-rocket">{rocket.name}</p>
+        <p key={rocket.id} className="my-rocket">
+          <a href={rocket.wikipedia}>{rocket.name}</a>
+        </p>
       ));
     }
-    return <h2>No Reserved Rockets</h2>;
+    return <h3 className="nada">No Reserved Rockets</h3>;
+  };
+
+  const handleDragonReservation = () => {
+    if (myReservedDragons.length) {
+      return myReservedDragons.map((dragon) => (
+        <p key={dragon.id} className="my-rocket">
+          <a href={dragon.wikipedia}>{dragon.name}</a>
+        </p>
+      ));
+    }
+    return <h3 className="nada">No Reserved Dragons</h3>;
   };
 
   const missions = useSelector((state) => state.missions);
@@ -23,20 +38,24 @@ const MyProfile = () => {
       <section className="my-missions-sec">
         <h2 className="my-headings">My Missions</h2>
         <div className="my-missions">
-          {activeMissions.map((mission) => (
-            <p className="my-mission" key={mission.mission_id}>
-              {mission.mission_name}
-            </p>
-          ))}
+          {missions.length ? (
+            activeMissions.map((mission) => (
+              <p className="my-mission" key={mission.mission_id}>
+                <a href={mission.wikipedia}>{mission.mission_name}</a>
+              </p>
+            ))
+          ) : (
+            <h3 className="nada">No Booked Missions</h3>
+          )}
         </div>
       </section>
       <section className="my-rockets-sec">
-        <h2 className="my-headings">My Missions</h2>
-        <div className="my-rockets">
-          {
-            handleReservations()
-          }
-        </div>
+        <h2 className="my-headings">My Rockets</h2>
+        <div className="my-rockets">{handleReservations()}</div>
+      </section>
+      <section className="my-rockets-sec">
+        <h2 className="my-headings">My Dragons</h2>
+        <div className="my-rockets">{handleDragonReservation()}</div>
       </section>
     </div>
   );

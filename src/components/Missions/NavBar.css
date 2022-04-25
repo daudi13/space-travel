@@ -5,9 +5,23 @@
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.nav {
+  background-color: rgb(218, 218, 218);
+  margin-top: 0;
+}
+
 .nav-bar {
   display: flex;
-  margin: 10px 50px;
+  margin: 0 50px;
   justify-content: space-between;
   align-items: center;
 }
@@ -20,15 +34,16 @@
 
 .logo {
   width: 80px;
-  margin-right: 20px;
+  margin: 10px 20px;
 }
 
 .header-title {
+  font-family: 'Russo One', sans-serif;
   font-size: 24px;
 }
 
 hr {
-  width: 90vw;
+  width: 100vw;
   margin: 0 auto;
   margin-bottom: 30px;
   color: rgba(62, 62, 62, 0.4);

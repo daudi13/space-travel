@@ -1,10 +1,12 @@
 .rocket-container {
   overflow-x: hidden;
   padding: 20px 40px;
+  min-height: 100vh;
 }
 
 h2,
 p {
+  font-family: 'Chakra Petch', sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -38,6 +40,11 @@ img {
   background-color: rgb(13, 141, 120);
   margin-right: 5px;
   color: #fff;
+}
+
+button {
+  padding: 8px 10px;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
 .rocket--desc__btn {
@@ -74,4 +81,8 @@ img {
     font-size: 17px;
     max-width: 800px;
   }
+}
+
+.nada {
+  color: grey;
 }
